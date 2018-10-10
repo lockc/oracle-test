@@ -11,7 +11,7 @@
 * Initialising the float with coins at any time will replace the current float
 * The float service does not persist the float in anyway, it is up to the API user to manage persistence or implement a persistent version of _FloatService_
 * Coins calculated for the change are the optimum denominations, the API is not clever enough to work out that the change can be served in other denominations
-* Insufficient coins in the exact denominations required will result in the float will remain unchanged and an exception thrown
+* Insufficient coins in the exact denominations required will result in the float remaining unchanged and an exception thrown
 * Uses a _double_ value for change issuing, the API expects the value to be at most 2 decimal places if not then it is rounded, zero or negative values are allowed but no change will be issues
 
 ### Denominations
@@ -26,7 +26,11 @@ When depositing coins to the float service you specify the number of each coin d
 * FIFTY_PENCE
 * ONE_POUND
 
-## Building the code
+## Development
+
+The API is writtin in Java using JDK 8.  It requires Apache Maven version 3+ to build.
+
+### Building the code
 
 To build the application run the following from the parent pom directory
 
@@ -37,7 +41,7 @@ mvn clean verify
 This will build and unit test the API
 
 
-## Running the application/test-harness
+### Running the application/test-harness
 
 To exercise the functionality of the Float API the API has been wired into a simple Spring based web application allowing you to interact
 with the API to perform the following functions:
